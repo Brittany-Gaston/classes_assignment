@@ -92,18 +92,37 @@ console.log(dolmation.toString())
 
 // a. Make an object called `freezingPoint` that has three properties: `celsius`, `fahrenheit`, and `kelvin`. Give them all values equal to the freezing point of water.
 
+let freezingPoint = {celsius: 0, fahrenheit: 32 , kelvin: 272}
 
 // b. Make a class called `Celsius` that has one property: `celsius`, and two methods `getFahrenheitTemp`, and `getKelvinTemp`.
-
+class Celsius {
+    constructor(celsius) {
+        this.celsius = celsius
+    }
+    getFahrenheitTemp() {
+        return 1.8 * this.celsius + 32
+    }
+    getKelvinTemp() {
+        return this.celsius + 273
+    }
+    isBelowFreezing() {
+        if(this.celsius < 0) {
+            return true
+        }else{
+            return false
+        }
+    }
+}
 // ```js
-// let outsideTempt = new Celsius(10.0)
+let outsideTempt = new Celsius(10.0)
 // outsideTempt.celsius //returns 10.0
 // outsideTempt.getKelvinTemp() //returns 283.0
 // outsideTempt.getFahrenheitTemp() //returns 50.0
 // ```
+console.log(outsideTempt.getFahrenheitTemp())
 
 // c. Give `Celsius` a method called `isBelowFreezing` that returns a `Bool` (true if the temperature is below freezing).
-
+console.log(outsideTempt.isBelowFreezing())
 // ## Question 5
 
 // a. Create a class called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
