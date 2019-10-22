@@ -45,7 +45,7 @@ console.log(harryPotter.isGood())
 
 // b. Add a method to `Book` called `isGood` that returns `true` if its rating is greater than or equal to 7
 
-// ## Question 3
+// Question 3
 
 // a. Create a `Dog` class with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.
 
