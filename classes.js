@@ -48,13 +48,40 @@ console.log(harryPotter.isGood())
 // Question 3
 
 // a. Create a `Dog` class with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.
+class Dog {
+    constructor(name,breed,mood,hungry){
+        this.name = name;
+        this.breed = breed;
+        this.mood = mood;
+        this.hungry = hungry
+    }
+    playfetch(){
+        this.hungry = true;
+        this.mood = "playful";
+        return "Ruff!"
+    }
+    feed(){
+        if(this.hungry === true){
+            this.hungry = false
+            return "woff!"
+        }else{
+            return "The dog doesn't look hungry"
+        }
+    }
+    toString(){
+        return this.name + " " + this.breed + " " + this.mood + " "+this.hungry
+    }
+}
+
+let dolmation = new Dog("Milot","domation", "good", true)
 
 // b. Add a method called `playFetch`. It should set the dog's `hungry` property to `true`, set its mood property to `playful`, and log "Ruff!"
-
+console.log(dolmation.playfetch())
 // c. Add a method called `feed`. If the dog is hungry, it should set `hungry` to `false` and print "Woof!" If the dog is not hungry, it should log "The dog doesn't look hungry"
 
+console.log(dolmation.feed())
 // d. Add a method called `toString` that returns a description of the dog:
-
+console.log(dolmation.toString())
 // ## Question 4
 
 // There are three common scales that are used to measure temperature: Celsius, Fahrenheit, and Kelvin:
@@ -65,20 +92,52 @@ console.log(harryPotter.isGood())
 
 // a. Make an object called `freezingPoint` that has three properties: `celsius`, `fahrenheit`, and `kelvin`. Give them all values equal to the freezing point of water.
 
+let freezingPoint = {celsius: 0, fahrenheit: 32 , kelvin: 272}
 
 // b. Make a class called `Celsius` that has one property: `celsius`, and two methods `getFahrenheitTemp`, and `getKelvinTemp`.
-
+class Celsius {
+    constructor(celsius) {
+        this.celsius = celsius
+    }
+    getFahrenheitTemp() {
+        return 1.8 * this.celsius + 32
+    }
+    getKelvinTemp() {
+        return this.celsius + 273
+    }
+    isBelowFreezing() {
+        if(this.celsius < 0) {
+            return true
+        }else{
+            return false
+        }
+    }
+}
 // ```js
-// let outsideTempt = new Celsius(10.0)
+let outsideTempt = new Celsius(10.0)
 // outsideTempt.celsius //returns 10.0
 // outsideTempt.getKelvinTemp() //returns 283.0
 // outsideTempt.getFahrenheitTemp() //returns 50.0
 // ```
+console.log(outsideTempt.getFahrenheitTemp())
 
 // c. Give `Celsius` a method called `isBelowFreezing` that returns a `Bool` (true if the temperature is below freezing).
-
+console.log(outsideTempt.isBelowFreezing())
 // ## Question 5
-
+class Movie{
+    constructor(name, year, genre, cast, description){
+        this.name = name
+        this.year = year
+        this.genre = genre
+        this.cast = cast
+        this.description = description
+    }
+    blurb(){
+      return this.description
+    }
+}
+let Borat = new Movie("Borat", 2006, "Satire", "Sacha Baron Cohen", "A man named Borat visited America from Kazakhstan")
+console.log(Borat)
 // a. Create a class called `Movie` that has properties for `name`, `year`, `genre`, `cast`, and `description`. Create an instance of your `Movie`
 
 // b. Create an method inside `Movie` called `blurb` that returns a formatted string describing the movie.
