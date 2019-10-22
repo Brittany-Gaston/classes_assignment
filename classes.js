@@ -48,13 +48,40 @@ console.log(harryPotter.isGood())
 // ## Question 3
 
 // a. Create a `Dog` class with four properties: `name (string), breed (string), mood (string), and hungry (boolean)`.
+class Dog {
+    constructor(name,breed,mood,hungry){
+        this.name = name;
+        this.breed = breed;
+        this.mood = mood;
+        this.hungry = hungry
+    }
+    playfetch(){
+        this.hungry = true;
+        this.mood = "playful";
+        return "Ruff!"
+    }
+    feed(){
+        if(this.hungry === true){
+            this.hungry = false
+            return "woff!"
+        }else{
+            return "The dog doesn't look hungry"
+        }
+    }
+    toString(){
+        return this.name + " " + this.breed + " " + this.mood + " "+this.hungry
+    }
+}
+
+let dolmation = new Dog("Milot","domation", "good", true)
 
 // b. Add a method called `playFetch`. It should set the dog's `hungry` property to `true`, set its mood property to `playful`, and log "Ruff!"
-
+console.log(dolmation.playfetch())
 // c. Add a method called `feed`. If the dog is hungry, it should set `hungry` to `false` and print "Woof!" If the dog is not hungry, it should log "The dog doesn't look hungry"
 
+console.log(dolmation.feed())
 // d. Add a method called `toString` that returns a description of the dog:
-
+console.log(dolmation.toString())
 // ## Question 4
 
 // There are three common scales that are used to measure temperature: Celsius, Fahrenheit, and Kelvin:
